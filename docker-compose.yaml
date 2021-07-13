@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  nginx:
+    depends_on:
+      - fabric-api
+    image: docsign_nginx
+    restart: always # because it is routing traffic to our entire app
+    build:
+      context: ./nginx
+    ports:
+      - '80:80'
+  fabric-api:
+    build:
+      context: ./
+      network: host
+    restart: always
+    ports:
+      - 3000:3000
