@@ -12,4 +12,3 @@ node src/registerUser.js retailer
 echo "***********************************"
 echo "       Starting API server         "
 echo "***********************************"
-npm start
